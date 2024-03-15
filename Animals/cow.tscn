@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://db0lw1h7gwn5g"]
+
+[ext_resource type="PackedScene" uid="uid://kqjpsu2to4da" path="res://Animals/animal_base.tscn" id="1_2jj1x"]
+[ext_resource type="Texture2D" uid="uid://bah3ux0y8agcy" path="res://assets/Characters/Free Cow Sprites.png" id="2_qeakp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j65lt"]
+atlas = ExtResource("2_qeakp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpybe"]
+atlas = ExtResource("2_qeakp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvupw"]
+atlas = ExtResource("2_qeakp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8pbr"]
+atlas = ExtResource("2_qeakp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np4vm"]
+atlas = ExtResource("2_qeakp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_das7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j65lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpybe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvupw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8pbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np4vm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 1.0
+}]
+
+[node name="Cow" instance=ExtResource("1_2jj1x")]
+
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_das7p")
+animation = &"idle"
+autoplay = "idle"

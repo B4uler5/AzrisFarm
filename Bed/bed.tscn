@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://244ectgvm7cf"]
+
+[ext_resource type="Script" path="res://Bed/bed.gd" id="1_k8db1"]
+[ext_resource type="Texture2D" uid="uid://cf722s3j3cij8" path="res://assets/Objects/azris_bed.png" id="1_o5yr0"]
+[ext_resource type="PackedScene" uid="uid://cksv7xkbs876e" path="res://Interactable/InteractableArea/InteractableArea.tscn" id="2_8mebr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xme3c"]
+size = Vector2(27, 33)
+
+[node name="bed" type="Node2D"]
+script = ExtResource("1_k8db1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o5yr0")
+
+[node name="InteractableArea" parent="." instance=ExtResource("2_8mebr")]
+action_name = "sleep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_xme3c")

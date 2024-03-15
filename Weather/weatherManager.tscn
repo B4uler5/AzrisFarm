@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://o2cvxtshgmmh"]
+
+[ext_resource type="Texture2D" uid="uid://becg7hdu4fshb" path="res://assets/particles/rain_particle.png" id="1_8rlw2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b8tv5"]
+lifetime_randomness = 0.6
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 1, 1)
+gravity = Vector3(0, 98, 0)
+
+[node name="WeatherManager" type="StaticBody2D"]
+z_index = 19
+position = Vector2(320, 0)
+
+[node name="rain" type="GPUParticles2D" parent="."]
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_b8tv5")
+texture = ExtResource("1_8rlw2")
+lifetime = 3.5

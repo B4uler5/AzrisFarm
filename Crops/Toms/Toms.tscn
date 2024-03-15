@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6aw7jp303fb"]
+
+[ext_resource type="PackedScene" uid="uid://br6fhehst4vqr" path="res://Crops/Base/BaseCrop.tscn" id="1_jr3dr"]
+[ext_resource type="Texture2D" uid="uid://cwby4magkw43v" path="res://assets/Objects/Basic_Plants.png" id="2_wuab2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svy81"]
+atlas = ExtResource("2_wuab2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwlyg"]
+atlas = ExtResource("2_wuab2")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7esk8"]
+atlas = ExtResource("2_wuab2")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4sve"]
+atlas = ExtResource("2_wuab2")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pv3bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svy81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwlyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7esk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4sve")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 0.0
+}]
+
+[node name="Toms" instance=ExtResource("1_jr3dr")]
+
+[node name="AnimatedSprite2D" parent="InteractableArea" index="0"]
+sprite_frames = SubResource("SpriteFrames_pv3bv")
+animation = &"grow"

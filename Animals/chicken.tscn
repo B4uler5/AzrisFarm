@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bl7hw3fptr71w"]
+
+[ext_resource type="PackedScene" uid="uid://kqjpsu2to4da" path="res://Animals/animal_base.tscn" id="1_qg503"]
+[ext_resource type="Texture2D" uid="uid://d17gq7s0q8lq" path="res://assets/Characters/Free Chicken Sprites.png" id="2_3fjrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01ioo"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xaaqb"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c2hq"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r17g"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqbxo"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcbu2"]
+atlas = ExtResource("2_3fjrm")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3q7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01ioo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xaaqb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c2hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r17g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqbxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcbu2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 1.0
+}]
+
+[node name="chicken" instance=ExtResource("1_qg503")]
+
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_j3q7t")
+animation = &"walk"
+autoplay = "idle"
